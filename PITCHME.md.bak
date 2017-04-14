@@ -6,7 +6,9 @@ PaaS for the good ones
 
 ### Flux Design
 
-- xxx
+- Dispatcher: Manages Data Flow
+- Stores: Handle State & Logic
+- Views: Render Data via React
 
 ---
 
