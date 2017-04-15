@@ -8,8 +8,8 @@ PaaS for the good ones :-)
 ## Agenda
 
 * Intro to Cloud Foundry
-* Architecture
-* Buildpacks
+* Architecture - Orgs & Spaces
+* Buildpacks - Droplets
 * cf cli
 * manifest.yml
 * Service Broker API
@@ -26,9 +26,66 @@ PaaS for the good ones :-)
 
 ---
 
-## Here is my source code | Run it on the cloud for me | I do not care how
+## Here is my source code 
+## Run it on the cloud for me 
+## I do not care how
 
 A haiku dedicated to ‘cf push’ by Onsi Fakhouri, Pivotal
 
 ---
+
+https://www.cloudfoundry.org/membership/members/
+
+---
+
+As Kanye West said:
+
+> We're living the future so
+> the present is our past.
+
+---
+
+```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```
+
+---
+
+```
+No language indicated, so no syntax highlighting. 
+But let's throw in a <b>tag</b>.
+```
+
+---
+
+```
+No language indicated, so no syntax highlighting. 
+But let's throw in a <b>tag</b>.
+```
+
+---
+
+```shell
+$ cf
+NAME:
+   C:\Program Files\CloudFoundry\cf.exe - A command line tool to interact with Cloud Foundry
+
+USAGE:
+   C:\Program Files\CloudFoundry\cf.exe [global options] command [arguments...] [command options]
+```
+
+---
+
+```bash
+$ cf
+NAME:
+   C:\Program Files\CloudFoundry\cf.exe - A command line tool to interact with Cloud Foundry
+
+USAGE:
+   C:\Program Files\CloudFoundry\cf.exe [global options] command [arguments...] [command options]
+```
 
