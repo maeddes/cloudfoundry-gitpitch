@@ -145,3 +145,5 @@ SERVICES:
 
    create-user-provided-service           Make a user-provided service instance available to CF apps
    update-user-provided-service           Update user-provided service instance
+   
+   ---?gist=afaae0cfafd7e2dcb4193b4d29b613e6
