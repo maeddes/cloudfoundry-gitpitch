@@ -88,4 +88,33 @@ NAME:
 USAGE:
    C:\Program Files\CloudFoundry\cf.exe [global options] command [arguments...] [command options]
 ```
+---
 
+```bash
+$ cf
+[..]
+SERVICES:
+   marketplace                            List available offerings in the marketplace
+   services                               List all service instances in the target space
+   service                                Show service instance info
+
+   create-service                         Create a service instance
+   update-service                         Update a service instance
+   delete-service                         Delete a service instance
+   rename-service                         Rename a service instance
+
+   create-service-key                     Create key for a service instance
+   service-keys                           List keys for a service instance
+   service-key                            Show service key info
+   delete-service-key                     Delete a service key
+
+   bind-service                           Bind a service instance to an app
+   unbind-service                         Unbind a service instance from an app
+
+   bind-route-service                     Bind a service instance to an HTTP route
+   unbind-route-service                   Unbind a service instance from an HTTP route
+
+   create-user-provided-service           Make a user-provided service instance available to CF apps
+   update-user-provided-service           Update user-provided service instance
+
+```
