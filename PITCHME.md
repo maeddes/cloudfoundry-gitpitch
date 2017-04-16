@@ -11,6 +11,10 @@ PaaS for the good ones :-)
 
 +++?gist=28ee3d19ddef9d51b15adbdfe9ed48da
 
++++?gist=cf4227416b55dac54a53
+
++++?gist=afaae0cfafd7e2dcb4193b4d29b613e6
+
 ---
 
 ## Agenda
@@ -24,7 +28,7 @@ PaaS for the good ones :-)
 
 ---
 
----?gist=cf4227416b55dac54a53
+
 
 ## Some facts
 
@@ -156,4 +160,4 @@ SERVICES:
    create-user-provided-service           Make a user-provided service instance available to CF apps
    update-user-provided-service           Update user-provided service instance
    
-   ---?gist=afaae0cfafd7e2dcb4193b4d29b613e6
+
