@@ -48,9 +48,10 @@ A haiku dedicated to ‘cf push’ by Onsi Fakhouri, Pivotal
 
 ---
 
-<iframe data-src="https://www.cloudfoundry.org/membership/members/" height="380px" width="100%" class="txt-c"></iframe>
+<iframe data-src="https://www.cloudfoundry.org/membership/members/" height="380px" width="100%"></iframe>
 
-###### https://www.cloudfoundry.org/membership/members/
+
+####### https://www.cloudfoundry.org/membership/members/
 
 ---
 
