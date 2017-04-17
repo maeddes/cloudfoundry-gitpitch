@@ -12,7 +12,7 @@ PaaS for the good ones :-)
 * Access control
 * cf cli
 * Apps - Buildpacks - Droplets
-* manifest.yml
+* cf push & manifest.yml
 * Services - Service Broker API
  
 ---
@@ -166,6 +166,17 @@ Targeted space development
 - By default, config.json is located in your ~/.cf directory. The CF_HOME environment variable allows you to locate the config.json file wherever you like.
 
 +++
+
+...
+
+---
+
+Applications, Buildpacks & Droplets
+
++++
+
+https://docs.cloudfoundry.org/buildpacks/
+https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks#community-created
 
 
 
