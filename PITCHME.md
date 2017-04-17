@@ -107,16 +107,15 @@ A user can have one or more roles. The combination of these roles defines the us
 
 ## Domains
 
-Note: The term domain in this topic differs from its common use and is specific to Cloud Foundry. Likewise, shared domain and private domain refer to resources with specific meaning in Cloud Foundry. The use of domain name, root domain, and subdomain refers to DNS records.
-
-Domains indicate to a developer that requests for any route created from the domain will be routed to Cloud Foundry. This requires DNS to be configured out-of-band to resolve the domain name to the IP address of a load balancer configured to forward requests to the CF routers. For more information about configuring DNS, see the DNS for Domains section.
+* The term domain in this topic differs from its common use and is specific to Cloud Foundry. 
+* The use of domain name, root domain, and subdomain refers to DNS records.
+* Domains indicate to a developer that requests for any route created from the domain will be routed to Cloud Foundry.
 
 +++
 
 ## Quotas
 
 Default Quota Plan for an Org
-Cloud Foundry installs with a quota plan named default with the following values:
 
 * Memory Limit: 10240 MB
 * Total Routes: 1000
