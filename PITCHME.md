@@ -17,6 +17,12 @@ PaaS for the good ones :-)
  
 ---
 
+## Sources
+
+ * docs.cloudfoundry.org
+ 
+--- 
+
 # INTRO
 
 +++
@@ -44,6 +50,32 @@ A haiku dedicated to ‘cf push’ by Onsi Fakhouri, Pivotal
 
 ####### https://www.cloudfoundry.org/membership/members/
 
++++
+
+IaaS / PaaS Taxonomy
+
+![Cloud Stack](https://docs.cloudfoundry.org/concepts/images/power-of-platform.png)
+
+(Source: docs.cloudfoundry.org)
+
++++
+
+## PaaS Concepts
+
+* Anyone can deploy applications quickly and make them accessible for everybody
+* In case of high requests, the platform can scale the app easily
+* Focus is on application an it's logic - not the underyling infrastructure
+
++++
+
+## How the Cloud Balances Its Load
+
+Clouds balance their processing loads over multiple machines, optimizing for efficiency and resilience against point failure. A Cloud Foundry installation accomplishes this at three levels:
+
+* BOSH creates and deploys virtual machines (VMs) on top of a physical computing infrastructure, and deploys and runs Cloud Foundry on top of this cloud. To configure the deployment, BOSH follows a manifest document.
+* The CF Cloud Controller runs the apps and other processes on the cloud’s VMs, balancing demand and managing app lifecycles.
+* The router routes incoming traffic from the world to the VMs that are running the apps that the traffic demands, usually working with a customer-provided load balancer.
+
 ---
 
 # ARCHITECTURE
@@ -51,6 +83,51 @@ A haiku dedicated to ‘cf push’ by Onsi Fakhouri, Pivotal
 +++
 
 ## ORGS & SPACES
+
++++
+
+## Orgs
+
+An org is a development account that an individual or multiple collaborators can own and use. All collaborators access an org with user accounts. Collaborators in an org share a resource quota plan, applications, services availability, and custom domains.
+
+By default, an org has the status of active. An admin can set the status of an org to suspended for various reasons such as failure to provide payment or misuse. When an org is suspended, users cannot perform certain activities within the org, such as push apps, modify spaces, or bind services. For details on what activities are allowed for suspended orgs, see Roles and Permissions for Suspended Orgs.
+
++++
+
+### Spaces
+
+Every application and service is scoped to a space. Each org contains at least one space. A space provides users with access to a shared location for application development, deployment, and maintenance. Each space role applies only to a particular space.
+
++++
+
+### User Accounts
+A user account represents an individual person within the context of a CF installation. A user can have different roles in different spaces within an org, governing what level and type of access they have within that space.
+
++++
+
+# Roles and Permissions
+A user can have one or more roles. The combination of these roles defines the user’s overall permissions in the org and within specific spaces in that org.
+
++++
+
+## Domains
+
+Note: The term domain in this topic differs from its common use and is specific to Cloud Foundry. Likewise, shared domain and private domain refer to resources with specific meaning in Cloud Foundry. The use of domain name, root domain, and subdomain refers to DNS records.
+
+Domains indicate to a developer that requests for any route created from the domain will be routed to Cloud Foundry. This requires DNS to be configured out-of-band to resolve the domain name to the IP address of a load balancer configured to forward requests to the CF routers. For more information about configuring DNS, see the DNS for Domains section.
+
++++
+
+## Quotas
+
+Default Quota Plan for an Org
+Cloud Foundry installs with a quota plan named default with the following values:
+
+* Memory Limit: 10240 MB
+* Total Routes: 1000
+* Total Services: 100
+* Non-basic Services Allowed: True
+* Trial DB Allowed: True
 
 ---
 
