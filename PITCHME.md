@@ -17,7 +17,7 @@ PaaS for the good ones :-)
  
 ---
 
-INTRO
+# INTRO
 
 +++
 
@@ -54,7 +54,7 @@ A haiku dedicated to ‘cf push’ by Onsi Fakhouri, Pivotal
 
 ---
 
-CF CLI
+# CF CLI
 
 +++?gist=afaae0cfafd7e2dcb4193b4d29b613e6
 
