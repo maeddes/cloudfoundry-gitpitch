@@ -9,7 +9,7 @@ PaaS for the good ones :-)
 ## Agenda
 
 * Intro to Cloud Foundry
-* Architecture - Orgs & Spaces
+* Access control
 * cf cli
 * Apps - Buildpacks - Droplets
 * manifest.yml
@@ -45,10 +45,9 @@ A haiku dedicated to ‘cf push’ by Onsi Fakhouri, Pivotal
 
 +++
 
-<iframe data-src="https://www.cloudfoundry.org/membership/members/" height="380px" width="100%"></iframe>
+<iframe data-src="https://www.cloudfoundry.org/membership/members/" height="480px" width="100%"></iframe>
 
-
-####### https://www.cloudfoundry.org/membership/members/
+ https://www.cloudfoundry.org/membership/members/
 
 +++
 
@@ -78,11 +77,7 @@ Clouds balance their processing loads over multiple machines, optimizing for eff
 
 ---
 
-# ARCHITECTURE
-
-+++
-
-## ORGS & SPACES
+# Access Control
 
 +++
 
@@ -94,18 +89,18 @@ By default, an org has the status of active. An admin can set the status of an o
 
 +++
 
-### Spaces
+## Spaces
 
 Every application and service is scoped to a space. Each org contains at least one space. A space provides users with access to a shared location for application development, deployment, and maintenance. Each space role applies only to a particular space.
 
 +++
 
-### User Accounts
+## User Accounts
 A user account represents an individual person within the context of a CF installation. A user can have different roles in different spaces within an org, governing what level and type of access they have within that space.
 
 +++
 
-# Roles and Permissions
+## Roles and Permissions
 A user can have one or more roles. The combination of these roles defines the user’s overall permissions in the org and within specific spaces in that org.
 
 +++
