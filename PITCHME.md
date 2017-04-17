@@ -58,6 +58,48 @@ A haiku dedicated to ‘cf push’ by Onsi Fakhouri, Pivotal
 
 +++?gist=afaae0cfafd7e2dcb4193b4d29b613e6
 
++++
+
+## Targets
+
+```bash
+$ cf login -a https://api.example.com -u username@example.com
+API endpoint: https://api.example.com
+
+Password>
+Authenticating...
+OK
+
+Select an org (or press enter to skip):
+1. example-org
+2. example-other-org
+
+Org> 1
+Targeted org example-org
+
+Select a space (or press enter to skip):
+1. development
+2. staging
+3. production
+
+Space> 1
+Targeted space development
+```
+
++++
+
+##Login
+
+- Upon successful login, the cf CLI saves a config.json file containing your API endpoint, org, space values, and access token. If you change these settings, the config.json file is updated accordingly.
+
+- By default, config.json is located in your ~/.cf directory. The CF_HOME environment variable allows you to locate the config.json file wherever you like.
+
++++
+
+
+
+
+
 ---
 
 # SERVICES
