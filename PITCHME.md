@@ -216,10 +216,29 @@ ENVIRONMENT:
    CF_STAGING_TIMEOUT=15        Max wait time for buildpack staging, in minutes
    CF_STARTUP_TIMEOUT=5         Max wait time for app instance startup, in minutes
 ```
++++
 
+cf push outputs go here
 
++++
 
+# manifest.yml
 
++++
+
+###sample
+```bash
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cat manifest.yml 
+---
+applications:
+- name: cf-simple-hello
+  memory: 512M
+  instances: 1
+  path: /home/mhs/git/cf-simple-hello/cf-simple-hello/target/demo-0.0.1-SNAPSHOT.jar
+  buildpack: java_buildpack_offline
+  
+```
++++
 
 ---
 
@@ -269,30 +288,6 @@ SERVICES:
 
 +++
 
-As Kanye West said:
-
-> We're living the future so
-> the present is our past.
-
-+++
-
-```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
-}
-```
-
-+++
-
-```
-No language indicated, so no syntax highlighting. 
-But let's throw in a <b>tag</b>.
-```
-
-+++
-
 ```
 No language indicated, so no syntax highlighting. 
 But let's throw in a <b>tag</b>.
@@ -318,5 +313,13 @@ NAME:
 
 USAGE:
    C:\Program Files\CloudFoundry\cf.exe [global options] command [arguments...] [command options]
+  
 ```
 
+---
+
+### Exercises
+
+- Build a sample app (or re-use existing one)
+- implement a manifest.yml (or modify existing one)
+- set the starting instances to more than one
