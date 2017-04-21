@@ -225,9 +225,8 @@ cf push outputs go here
 
 +++
 
-###sample
+```shell
 
-```bash
 mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cat manifest.yml 
 ---
 applications:
@@ -236,7 +235,9 @@ applications:
   instances: 1
   path: /home/mhs/git/cf-simple-hello/cf-simple-hello/target/demo-0.0.1-SNAPSHOT.jar
   buildpack: java_buildpack_offline
+
 ```
+
 +++
 
 <iframe data-src="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html" height="480px" width="100%"></iframe>
