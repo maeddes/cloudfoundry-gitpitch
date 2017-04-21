@@ -178,6 +178,45 @@ Applications, Buildpacks & Droplets
 https://docs.cloudfoundry.org/buildpacks/
 https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks#community-created
 
++++
+
+!(https://1.bp.blogspot.com/-4aQw8F8suu4/VrkvObvIjkI/AAAAAAAAG08/X3At9XP5A9k/s1600/Selection_019.png)
+
+(source: http://nanduni.blogspot.de)
+
++++
+
+## Container image goes here
+
++++
+
+# cf push
+
++++
+
+```bash
+mhs@R2-D2:~$ cf push --help
+NAME:
+   push - Push a new app or sync changes to an existing app
+
+OPTIONS:
+   -b                           Custom buildpack by name (e.g. my-buildpack) or Git URL (e.g. 'https://github.com/cloudfoundry/java-buildpack.git') or Git URL with a branch or tag (e.g. 'https://github.com/cloudfoundry/java-buildpack.git#v3.3.0' for 'v3.3.0' tag). To use built-in buildpacks only, specify 'default' or 'null'
+   -f                           Path to manifest
+   --health-check-type, -u      Application health check type (Default: 'port', 'none' accepted for 'process', 'http' implies endpoint '/')
+   -i                           Number of instances
+   -k                           Disk limit (e.g. 256M, 1024M, 1G)
+   -m                           Memory limit (e.g. 256M, 1024M, 1G)
+   --no-manifest                Ignore manifest file
+   --no-route                   Do not map a route to this app and remove routes from previous pushes of this app
+   --no-start                   Do not start an app after pushing
+   -p                           Path to app directory or to a zip file of the contents of the app directory
+   -t                           Time (in seconds) allowed to elapse between starting up an app and the first healthy response from the app
+
+ENVIRONMENT:
+   CF_STAGING_TIMEOUT=15        Max wait time for buildpack staging, in minutes
+   CF_STARTUP_TIMEOUT=5         Max wait time for app instance startup, in minutes
+```
+
 
 
 
