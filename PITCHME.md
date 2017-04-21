@@ -9,7 +9,7 @@ PaaS for the good ones :-)
 ## Agenda
 
 * Intro to Cloud Foundry
-* Access control
+* Administration
 * cf cli
 * Apps - Buildpacks - Droplets
 * Services - Service Broker API
@@ -74,9 +74,17 @@ Clouds balance their processing loads over multiple machines, optimizing for eff
 * The CF Cloud Controller runs the apps and other processes on the cloud’s VMs, balancing demand and managing app lifecycles.
 * The router routes incoming traffic from the world to the VMs that are running the apps that the traffic demands, usually working with a customer-provided load balancer.
 
++++
+
+## Try it out
+
+https://www.cloudfoundry.org/how-can-i-try-out-cloud-foundry-2016/
+
+https://www.cloudfoundry.org/certified-platforms/
+
 ---
 
-# Access Control
+# Administration
 
 +++
 
@@ -174,11 +182,6 @@ Applications, Buildpacks & Droplets
 
 +++
 
-https://docs.cloudfoundry.org/buildpacks/
-https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks#community-created
-
-+++
-
 ![cf push](https://1.bp.blogspot.com/-4aQw8F8suu4/VrkvObvIjkI/AAAAAAAAG08/X3At9XP5A9k/s1600/Selection_019.png)
 
 (source: http://nanduni.blogspot.de)
@@ -252,8 +255,26 @@ https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html
 
 +++
 
+- Buildpacks provide framework and runtime support for your applications
+- Buildpacks typically examine user-provided artifacts to determine what dependencies to download and how to configure applications to communicate with bound services.
+- When you push an application, Cloud Foundry automatically detects which buildpack is required and installs it in the container where the application needs to run.
 
++++
 
+<iframe data-src="https://docs.cloudfoundry.org/buildpacks/#system-buildpacks" height="480px" width="100%"></iframe>
+https://docs.cloudfoundry.org/buildpacks/#system-buildpacks
+
++++
+
+<iframe data-src="https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks#community-created" height="480px" width="100%"></iframe>
+https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks#community-created
+
++++
+
+- It is possible to build own buildpacks
+- It is possible to create "offline" buildpacks
+- Very often a local CF deployment does not have full Internet access
+-
 
 
 ---
