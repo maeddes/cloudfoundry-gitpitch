@@ -225,10 +225,12 @@ cf push outputs go here
 
 +++
 
+## sample
+
 ```shell
 
 mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cat manifest.yml 
----
+
 applications:
 - name: cf-simple-hello
   memory: 512M
