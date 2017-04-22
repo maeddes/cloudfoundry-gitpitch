@@ -73,7 +73,7 @@ IaaS / PaaS Taxonomy
 
 +++
 
-## How the Cloud Balances Its Load
+## Cloud Load Balancing
 
 * BOSH creates and deploys virtual machines (VMs) on top of a physical computing infrastructure, and deploys and runs Cloud Foundry on top of this cloud. 
 * The CF Cloud Controller runs the apps and other processes on the cloud’s VMs, balancing demand and managing app lifecycles.
