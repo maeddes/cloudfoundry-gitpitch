@@ -75,8 +75,6 @@ IaaS / PaaS Taxonomy
 
 ## How the Cloud Balances Its Load
 
-Clouds balance their processing loads over multiple machines, optimizing for efficiency and resilience against point failure. A Cloud Foundry installation accomplishes this at three levels:
-
 * BOSH creates and deploys virtual machines (VMs) on top of a physical computing infrastructure, and deploys and runs Cloud Foundry on top of this cloud. To configure the deployment, BOSH follows a manifest document.
 * The CF Cloud Controller runs the apps and other processes on the cloud’s VMs, balancing demand and managing app lifecycles.
 * The router routes incoming traffic from the world to the VMs that are running the apps that the traffic demands, usually working with a customer-provided load balancer.
@@ -86,6 +84,7 @@ Clouds balance their processing loads over multiple machines, optimizing for eff
 ![CF Diagram](https://pbs.twimg.com/media/C9zpBi9VoAAt0LA.jpg)
 https://twitter.com/wattersjames/status/854814439572250624
 
++++
 
 ## Try it out
 
@@ -198,13 +197,10 @@ Targeted space development
 
 - By default, config.json is located in your ~/.cf directory. The CF_HOME environment variable allows you to locate the config.json file wherever you like.
 
-+++
-
-...
-
 ---
 
-Applications, Buildpacks & Droplets
+#Applications
+##Buildpacks & Droplets
 
 +++
 
@@ -214,7 +210,7 @@ Applications, Buildpacks & Droplets
 
 +++
 
-## Container image goes here
+![sketch1](img/20170421_202906.jpg)
 
 +++
 
@@ -300,9 +296,12 @@ https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks#commun
 - It is possible to build own buildpacks
 - It is possible to create "offline" buildpacks
 - Very often a local CF deployment does not have full Internet access
--
+- Offline buildpacks can solve this problem, but need manual steps
 
+---
 
+#Applications
+##Environment, Scaling & ssh
 ---
 
 # SERVICES
