@@ -242,7 +242,86 @@ ENVIRONMENT:
 ```
 +++
 
-cf push outputs go here
+### App creation and binding
+```bash
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf push
+Using manifest file /home/mhs/git/cf-simple-hello/cf-simple-hello/manifest.yml
+
+Creating app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
+OK
+
+Using route cf-simple-hello.local.pcfdev.io
+Binding cf-simple-hello.local.pcfdev.io to cf-simple-hello...
+OK
+
+Uploading cf-simple-hello...
+Uploading app files from: /tmp/unzipped-app693955360
+Uploading 314.6K, 86 files
+Done uploading               
+OK
+```
+
++++
+
+### Staging
+```bash
+Starting app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
+Downloading java_buildpack...
+Downloaded java_buildpack
+Creating container
+Successfully created container
+Downloading app package...
+Downloaded app package (12.2M)
+Staging...
+-----> Java Buildpack Version: v3.10 (offline) | https://github.com/cloudfoundry/java-buildpack.git#193d6b7
+-----> Downloading Open Jdk JRE 1.8.0_111 from https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_111.tar.gz (found in cache)
+       Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (4.0s)
+-----> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from https://java-buildpack.cloudfoundry.org/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz (found in cache)
+       Memory Settings: -Xmx681574K -XX:MaxMetaspaceSize=104857K -Xms681574K -XX:MetaspaceSize=104857K -Xss349K
+-----> Downloading Spring Auto Reconfiguration 1.10.0_RELEASE from https://java-buildpack.cloudfoundry.org/auto-reconfiguration/auto-reconfiguration-1.10.0_RELEASE.jar (found in cache)
+Exit status 0
+Staging complete
+Uploading droplet, build artifacts cache...
+Uploading build artifacts cache...
+Uploading droplet...
+Uploaded build artifacts cache (108B)
+Uploaded droplet (57.3M)
+Uploading complete
+Destroying container
+Successfully destroyed container
+```
+
++++
+
+###Starting
+```bash
+0 of 1 instances running, 1 starting
+0 of 1 instances running, 1 starting
+0 of 1 instances running, 1 starting
+0 of 1 instances running, 1 starting
+1 of 1 instances running
+
+App started
+
+
+OK
+
+App cf-simple-hello was started using this command `CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpack-memory-calculator-2.0.2_RELEASE -memorySizes=metaspace:64m..,stack:228k.. -memoryWeights=heap:65,metaspace:10,native:15,stack:10 -memoryInitials=heap:100%,metaspace:100% -stackThreads=300 -totMemory=$MEMORY_LIMIT) && JAVA_OPTS="-Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh $CALCULATED_MEMORY" && SERVER_PORT=$PORT eval exec $PWD/.java-buildpack/open_jdk_jre/bin/java $JAVA_OPTS -cp $PWD/. org.springframework.boot.loader.JarLauncher`
+
+Showing health and status for app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
+OK
+
+requested state: started
+instances: 1/1
+usage: 256M x 1 instances
+urls: cf-simple-hello.local.pcfdev.io
+last uploaded: Fri Apr 21 15:38:16 UTC 2017
+stack: cflinuxfs2
+buildpack: java_buildpack
+
+     state     since                    cpu      memory           disk             details
+#0   running   2017-04-21 05:39:36 PM   220.1%   149.6M of 256M   135.7M of 512M
+```
 
 +++
 
