@@ -11,14 +11,16 @@ PaaS for the good ones :-)
 * Intro to Cloud Foundry
 * Administration
 * cf cli
-* Apps - Buildpacks - Droplets
-* Services - Service Broker API
+* Apps - Deployment
+* Apps - Runtime
+* Services 
  
 ---
 
 ## Sources
 
  * docs.cloudfoundry.org
+ * twitter
  
 --- 
 
@@ -45,6 +47,7 @@ A haiku dedicated to ‘cf push’ by Onsi Fakhouri, Pivotal
 +++
 
 ![CF Voodoo](https://pbs.twimg.com/media/C99itvAWAAY1SXS.jpg)
+https://twitter.com/swardley/status/855511570360795136
 
 +++
 
@@ -80,10 +83,20 @@ Clouds balance their processing loads over multiple machines, optimizing for eff
 
 +++
 
+![CF Diagram](https://pbs.twimg.com/media/C9zpBi9VoAAt0LA.jpg)
+https://twitter.com/wattersjames/status/854814439572250624
+
+
 ## Try it out
 
+<iframe data-src="https://www.cloudfoundry.org/how-can-i-try-out-cloud-foundry-2016" height="480px" width="100%"></iframe>
 https://www.cloudfoundry.org/how-can-i-try-out-cloud-foundry-2016/
 
++++
+
+## Try it out pt 2
+
+<iframe data-src="https://www.cloudfoundry.org/certified-platforms/" height="480px" width="100%"></iframe>
 https://www.cloudfoundry.org/certified-platforms/
 
 ---
@@ -94,25 +107,34 @@ https://www.cloudfoundry.org/certified-platforms/
 
 ## Orgs
 
-An org is a development account that an individual or multiple collaborators can own and use. All collaborators access an org with user accounts. Collaborators in an org share a resource quota plan, applications, services availability, and custom domains.
-
-By default, an org has the status of active. An admin can set the status of an org to suspended for various reasons such as failure to provide payment or misuse. When an org is suspended, users cannot perform certain activities within the org, such as push apps, modify spaces, or bind services. For details on what activities are allowed for suspended orgs, see Roles and Permissions for Suspended Orgs.
+- The outer grouping boundary
+- An org is a development account that an individual or multiple collaborators can own and use. 
+- All collaborators access an org with user accounts. 
+- Collaborators in an org share a resource quota plan, applications, services availability, and custom domains.
 
 +++
 
 ## Spaces
 
-Every application and service is scoped to a space. Each org contains at least one space. A space provides users with access to a shared location for application development, deployment, and maintenance. Each space role applies only to a particular space.
+- The inner grouping boundary
+- Every application and service is scoped to a space. 
+- Each org contains at least one space. 
+- A space provides users with access to a shared location for application development, deployment, and maintenance.
+- Each space role applies only to a particular space.
 
 +++
 
 ## User Accounts
-A user account represents an individual person within the context of a CF installation. A user can have different roles in different spaces within an org, governing what level and type of access they have within that space.
+
+- A user account represents an individual person within the context of a CF installation. 
+- A user can have different roles in different spaces within an org, governing what level and type of access they have within that space.
 
 +++
 
 ## Roles and Permissions
-A user can have one or more roles. The combination of these roles defines the user’s overall permissions in the org and within specific spaces in that org.
+
+- A user can have one or more roles. 
+- The combination of these roles defines the user’s overall permissions in the org and within specific spaces in that org.
 
 +++
 
