@@ -381,6 +381,72 @@ https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks#commun
 
 #Applications
 ##Environment, Scaling & ssh
+
++++
+
+### Application status
+
+```bash
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf app cf-simple-hello
+Showing health and status for app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
+OK
+
+requested state: started
+instances: 1/1
+usage: 256M x 1 instances
+urls: cf-simple-hello.local.pcfdev.io
+last uploaded: Fri Apr 21 15:38:16 UTC 2017
+stack: cflinuxfs2
+buildpack: java_buildpack
+
+     state     since                    cpu    memory           disk             details
+#0   running   2017-04-21 05:39:36 PM   1.8%   185.3M of 256M   135.7M of 512M
+```
+
++++
+
+### Application environment
+
+```bash
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf env cf-simple-hello
+Getting env variables for app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
+OK
+
+System-Provided:
+
+
+{
+ "VCAP_APPLICATION": {
+  "application_id": "8e8eaac1-3722-40c2-88ee-22e6b0c1bf4b",
+  "application_name": "cf-simple-hello",
+  "application_uris": [
+   "cf-simple-hello.local.pcfdev.io"
+  ],
+  "application_version": "3bc37ef1-b175-4362-b8d6-8deae737aced",
+  "cf_api": "http://api.local.pcfdev.io",
+  "limits": {
+   "disk": 512,
+   "fds": 16384,
+   "mem": 256
+  },
+  "name": "cf-simple-hello",
+  "space_id": "d928cac8-5f3d-4b5a-bc0f-7ac221e243ea",
+  "space_name": "pcfdev-space",
+  "uris": [
+   "cf-simple-hello.local.pcfdev.io"
+  ],
+  "users": null,
+  "version": "3bc37ef1-b175-4362-b8d6-8deae737aced"
+ }
+}
+
+No user-defined env variables have been set
+
+No running env variables have been set
+
+No staging env variables have been set
+```
+
 ---
 
 # SERVICES
