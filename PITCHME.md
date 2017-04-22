@@ -44,8 +44,7 @@ A haiku dedicated to ‘cf push’ by Onsi Fakhouri, Pivotal
 
 +++
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="da" dir="ltr"><a href="https://twitter.com/wattersjames">@wattersjames</a> FTFY ... :-) <a href="https://t.co/sy1VcdtUwK">pic.twitter.com/sy1VcdtUwK</a></p>&mdash; swardley (@swardley) <a href="https://twitter.com/swardley/status/855511570360795136">April 21, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+![CF Voodoo](https://pbs.twimg.com/media/C99itvAWAAY1SXS.jpg)
 
 +++
 
