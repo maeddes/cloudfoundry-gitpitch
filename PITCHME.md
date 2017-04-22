@@ -447,6 +447,62 @@ No running env variables have been set
 No staging env variables have been set
 ```
 
++++
+
+### Logging
+
+```bash
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf logs cf-simple-hello
+Connected, tailing logs for app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
+
+2017-04-21T18:03:55.46+0200 [RTR/0]      OUT cf-simple-hello.local.pcfdev.io - [21/04/2017:16:03:55.467 +0000] "GET / HTTP/1.1" 200 0 34 "-" "curl/7.47.0" 192.168.11.1:33344 10.0.2.15:60138 x_forwarded_for:"192.168.11.1" x_forwarded_proto:"http" vcap_request_id:bafbf532-409f-4268-794b-635aa2351e3a response_time:0.002067835 app_id:8e8eaac1-3722-40c2-88ee-22e6b0c1bf4b app_index:0
+2017-04-21T18:03:56.50+0200 [RTR/0]      OUT cf-simple-hello.local.pcfdev.io - [21/04/2017:16:03:56.504 +0000] "GET / HTTP/1.1" 200 0 34 "-" "curl/7.47.0" 192.168.11.1:33346 10.0.2.15:60138 x_forwarded_for:"192.168.11.1" x_forwarded_proto:"http" vcap_request_id:d8929a1a-6dec-4844-5359-e25b5c4d7040 response_time:0.001836894 app_id:8e8eaac1-3722-40c2-88ee-22e6b0c1bf4b app_index:0
+2017-04-21T18:03:57.54+0200 [RTR/0]      OUT cf-simple-hello.local.pcfdev.io - [21/04/2017:16:03:57.541 +0000] "GET / HTTP/1.1" 200 0 34 "-" "curl/7.47.0" 192.168.11.1:33348 10.0.2.15:60138 x_forwarded_for:"192.168.11.1" x_forwarded_proto:"http" vcap_request_id:c28451eb-b474-4d3c-5923-0e52f79cc479 response_time:0.001895981 app_id:8e8eaac1-3722-40c2-88ee-22e6b0c1bf4b app_index:0
+2017-04-21T18:03:58.58+0200 [RTR/0]      OUT cf-simple-hello.local.pcfdev.io - [21/04/2017:16:03:58.578 +0000] "GET / HTTP/1.1" 200 0 34 "-" "curl/7.47.0" 192.168.11.1:33350 10.0.2.15:60138 x_forwarded_for:"192.168.11.1" x_forwarded_proto:"http" vcap_request_id:93a27303-4980-473b-68e6-0db29b3a2266 response_time:0.00169934 app_id:8e8eaac1-3722-40c2-88ee-22e6b0c1bf4b app_index:0
+2017-04-21T18:03:59.61+0200 [RTR/0]      OUT cf-simple-hello.local.pcfdev.io - [21/04/2017:16:03:59.615 +0000] "GET / HTTP/1.1" 200 0 34 "-" "curl/7.47.0" 192.168.11.1:33352 10.0.2.15:60138 x_forwarded_for:"192.168.11.1" x_forwarded_proto:"http" vcap_request_id:efa76e2e-d320-4bb5-6710-0823b0dcb095 response_time:0.00185939 app_id:8e8eaac1-3722-40c2-88ee-22e6b0c1bf4b app_index:0
+^C
+```
+
++++
+
+### Scaling
+
+```bash
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf scale cf-simple-hello
+Showing current scale of app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
+OK
+
+memory: 256M
+disk: 512M
+instances: 1
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf scale cf-simple-hello -i 3
+Scaling app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
+OK
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf scale cf-simple-hello
+Showing current scale of app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
+OK
+
+memory: 256M
+disk: 512M
+instances: 3
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ 
+```
+
++++
+
+### ssh access
+
+```bash
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf ssh-enabled cf-simple-hello
+ssh support is enabled for 'cf-simple-hello'
+
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf ssh cf-simple-hello
+vcap@898a7598-88da-4dcc-40b2-dff660fb5b37:~$ ls
+app  logs  staging_info.yml  tmp
+vcap@898a7598-88da-4dcc-40b2-dff660fb5b37:~$ pwd
+/home/vcap
+```
+
 ---
 
 # SERVICES
@@ -481,52 +537,87 @@ SERVICES:
    update-user-provided-service           Update user-provided service instance
 
 ```
+
++++
+
+### Marketplace
+```bash
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf marketplace
+Getting services from marketplace in org pcfdev-org / space pcfdev-space as admin...
+OK
+
+service        plans             description
+local-volume   free-local-disk   Local service docs: https://github.com/cloudfoundry-incubator/local-volume-release/
+p-mysql        512mb, 1gb        MySQL databases on demand
+p-rabbitmq     standard          RabbitMQ is a robust and scalable high-performance multi-protocol messaging broker.
+p-redis        shared-vm         Redis service to provide a key-value store
+
+TIP:  Use 'cf marketplace -s SERVICE' to view descriptions of individual plans of a given service
+
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf marketplace -s p-mysql
+Getting service plan information for service p-mysql as admin...
+OK
+
+service plan   description            free or paid
+512mb          PCF Dev MySQL Server   free
+1gb            PCF Dev MySQL Server   free
+```
 ---
 
-#Test & Backup
-
-+++?gist=8da53731fd54bab9d5c6
-
-+++?gist=28ee3d19ddef9d51b15adbdfe9ed48da
-
-+++?gist=cf4227416b55dac54a53
-
-+++?gist=afaae0cfafd7e2dcb4193b4d29b613e6
-
-+++
-
-```
-No language indicated, so no syntax highlighting. 
-But let's throw in a <b>tag</b>.
-```
-
-+++
-
-```shell
-$ cf
-NAME:
-   C:\Program Files\CloudFoundry\cf.exe - A command line tool to interact with Cloud Foundry
-
-USAGE:
-   C:\Program Files\CloudFoundry\cf.exe [global options] command [arguments...] [command options]
-```
-
-+++
+### Service creation
 
 ```bash
-$ cf
-NAME:
-   C:\Program Files\CloudFoundry\cf.exe - A command line tool to interact with Cloud Foundry
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf create-service p-mysql 512mb cf-simple-mysql
+Creating service instance cf-simple-mysql in org pcfdev-org / space pcfdev-space as admin...
+OK
 
-USAGE:
-   C:\Program Files\CloudFoundry\cf.exe [global options] command [arguments...] [command options]
-  
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf service cf-simple-mysql
+
+Service instance: cf-simple-mysql
+Service: p-mysql
+Bound apps: 
+Tags: 
+Plan: 512mb
+Description: MySQL databases on demand
+Documentation url: 
+Dashboard: http://mysql-broker.local.pcfdev.io/manage/instances/24ab1a85-b547-4721-8870-22726819828c
+
+Last Operation
+Status: create succeeded
+Message: 
+Started: 2017-04-21T16:41:45Z
+Updated: 2017-04-21T16:41:45Z
 ```
++++
+
+
+
+# Demo
 
 ---
+
+### Lessons learned
+
+- Concept of "Bring your own code"
+- Orgs, Spaces, Users, Quotas
+- App + Buildpack = Droplet
+- App logging, env, scaling & access
+- Services - Managed & User-provided
+
+---
+
+### Advantages
+
+- Easy deployment - only code necessary
+- Automatic setup of immutable artifact
+- Automatic restart - resilience
+- Aggregated logging
+- Scaling & Load-Balancing
+- Fault tolerance
 
 ### Exercises
 
 - Build a sample app (or re-use existing one)
 - implement a manifest.yml (or modify existing one)
 - set the starting instances to more than one
+- observe the
