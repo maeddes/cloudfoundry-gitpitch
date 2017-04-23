@@ -490,6 +490,32 @@ mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$
 
 +++
 
+### Observing the instances live
+
+```bash
+mhs@R2-D2:~$ watch -n 1 cf app cpd-mysql
+
+Showing health and status for app cf-simple-hello in org pcfdev-org / space pcfd
+ev-space as admin...
+OK
+
+requested state: started
+instances: 3/3
+usage: 256M x 3 instances
+urls: cf-simple-hello.local.pcfdev.io
+last uploaded: Fri Apr 21 15:38:16 UTC 2017
+stack: cflinuxfs2
+buildpack: java_buildpack
+
+     state     since                    cpu    memory           disk
+ details
+#0   starting  2017-04-21 09:40:54 PM   0.4%   178.2M of 256M   135.7M of 512M
+#1   running   2017-04-21 07:41:21 PM   0.3%   230.9M of 256M   135.7M of 512M
+#2   crashed   2017-04-21 07:41:16 PM   0.3%   223.2M of 256M   135.7M of 512M
+
+
+```
+
 ### ssh access
 
 ```bash
@@ -501,6 +527,14 @@ vcap@898a7598-88da-4dcc-40b2-dff660fb5b37:~$ ls
 app  logs  staging_info.yml  tmp
 vcap@898a7598-88da-4dcc-40b2-dff660fb5b37:~$ pwd
 /home/vcap
+vcap@898a7598-88da-4dcc-40b2-dff660fb5b37:~$ ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 17:41 ?        00:00:00 /proc/self/exe init
+vcap         6     0  0 17:41 ?        00:00:40 /home/vcap/app/.java-buildpack/open_jdk_jre/bin/j
+vcap        11     0  0 17:41 ?        00:00:00 /tmp/lifecycle/diego-sshd --allowedKeyExchanges= 
+vcap      2382    11  0 19:40 pts/0    00:00:00 /bin/bash
+vcap      2393  2382  0 19:40 pts/0    00:00:00 ps -ef
+
 ```
 
 ---
@@ -590,7 +624,76 @@ Updated: 2017-04-21T16:41:45Z
 ```
 +++
 
+# Service binding
 
+```bash
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf bind-service cf-simple-hello cf-simple-mysql
+Binding service cf-simple-mysql to app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
+OK
+TIP: Use 'cf restage cf-simple-hello' to ensure your env variable changes take effect
+```
+
++++
+
+```bash
+mhs@R2-D2:~/git/cf-simple-hello/cf-simple-hello$ cf env cf-simple-hello
+Getting env variables for app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
+OK
+
+System-Provided:
+{
+ "VCAP_SERVICES": {
+  "p-mysql": [
+   {
+    "credentials": {
+     "hostname": "mysql-broker.local.pcfdev.io",
+     "jdbcUrl": "jdbc:mysql://mysql-broker.local.pcfdev.io:3306/cf_24ab1a85_b547_4721_8870_22726819828c?user=YlukSlUdSdsjA6jz\u0026password=gXqlUeLOIN9j4QWJ",
+     "name": "cf_24ab1a85_b547_4721_8870_22726819828c",
+     "password": "gXqlUeLOIN9j4QWJ",
+     "port": 3306,
+     "uri": "mysql://YlukSlUdSdsjA6jz:gXqlUeLOIN9j4QWJ@mysql-broker.local.pcfdev.io:3306/cf_24ab1a85_b547_4721_8870_22726819828c?reconnect=true",
+     "username": "YlukSlUdSdsjA6jz"
+    },
+    "label": "p-mysql",
+    "name": "cf-simple-mysql",
+    "plan": "512mb",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": [
+     "mysql"
+    ],
+    "volume_mounts": []
+   }
+  ]
+ }
+}
+
+{
+ "VCAP_APPLICATION": {
+  "application_id": "8e8eaac1-3722-40c2-88ee-22e6b0c1bf4b",
+  "application_name": "cf-simple-hello",
+  "application_uris": [
+   "cf-simple-hello.local.pcfdev.io"
+  ],
+  "application_version": "3bc37ef1-b175-4362-b8d6-8deae737aced",
+  "cf_api": "http://api.local.pcfdev.io",
+  "limits": {
+   "disk": 512,
+   "fds": 16384,
+   "mem": 256
+  },
+  "name": "cf-simple-hello",
+  "space_id": "d928cac8-5f3d-4b5a-bc0f-7ac221e243ea",
+  "space_name": "pcfdev-space",
+  "uris": [
+   "cf-simple-hello.local.pcfdev.io"
+  ],
+  "users": null,
+  "version": "3bc37ef1-b175-4362-b8d6-8deae737aced"
+ }
+}
+
+```
 
 # Demo
 
@@ -619,5 +722,19 @@ Updated: 2017-04-21T16:41:45Z
 
 - Build a sample app (or re-use existing one)
 - implement a manifest.yml (or modify existing one)
-- set the starting instances to more than one
-- observe the
+- Deploy the application
+- Use the CLI to
+  - analyze the logs
+  - ssh into your application's container
+  - kill it :)
+  - scale the instances up and down
+  
+### Exercises II
+
+- Run a while loop against an HTTP endpoint of your app
+- Observe the round robin access of your instances
+- Observe the availability with single & multiple instances
+- List the services from the marketplace
+- Create a service
+- Bind a service
+- Use the service (not described!)
