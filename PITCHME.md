@@ -372,7 +372,7 @@ https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html
 
 +++
 
-![Liberty](img/cf-liberty.png)
+![Liberty](img/cf_liberty.png)
 
 +++
 
