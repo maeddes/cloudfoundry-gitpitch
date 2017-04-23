@@ -372,6 +372,10 @@ https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html
 
 +++
 
+!(Liberty)[img/cf-liberty.png)
+
++++
+
 - It is possible to build own buildpacks
 - It is possible to create "offline" buildpacks
 - Very often a local CF deployment does not have full Internet access
