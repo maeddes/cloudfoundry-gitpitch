@@ -600,7 +600,8 @@ service plan   description            free or paid
 512mb          PCF Dev MySQL Server   free
 1gb            PCF Dev MySQL Server   free
 ```
----
+
++++
 
 ### Service creation
 
@@ -699,6 +700,8 @@ System-Provided:
 
 ```
 
+---
+
 # Demo
 
 ---
@@ -722,6 +725,8 @@ System-Provided:
 - Scaling & Load-Balancing
 - Fault tolerance
 
+---
+
 ### Exercises
 
 - Build a sample app (or re-use existing one)
@@ -732,6 +737,8 @@ System-Provided:
   - ssh into your application's container
   - kill it :)
   - scale the instances up and down
+  
+---
   
 ### Exercises II
 
