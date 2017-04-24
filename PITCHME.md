@@ -751,3 +751,11 @@ System-Provided:
 - Create a service
 - Bind a service
 - Use the service (not described!)
+
+---
+  
+### Exercises - for the fast ones :)
+
+- Read about Blue - Green Deployment
+- https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html
+- Do it!
