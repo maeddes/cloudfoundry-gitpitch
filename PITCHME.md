@@ -710,6 +710,13 @@ System-Provided:
 
 ---
 
+# Note
+
+### pcf dev users use cf suspend/resume for your VM
+
+
+---
+
 ### Lessons learned
 
 - Concept of "Bring your own code"
