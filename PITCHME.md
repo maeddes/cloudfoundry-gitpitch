@@ -21,6 +21,8 @@ PaaS for the good ones :-)
 
  * docs.cloudfoundry.org
  * twitter
+ * slideshare
+ * github
  
 --- 
 
