@@ -770,8 +770,6 @@ System-Provided:
 
 ---
 
-## Meetup
-
 ![Meetup](https://secure.meetupstatic.com/photos/event/e/8/a/6/highres_458579558.jpeg)
 https://www.meetup.com/Stuttgart-Cloud-Foundry-Meetup/events/237897736/
 
