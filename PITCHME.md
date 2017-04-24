@@ -720,6 +720,12 @@ System-Provided:
 
 ---
 
+## Clear by now?
+
+![sketch1](img/20170421_202906.jpg)
+
+---
+
 ### Advantages
 
 - Easy deployment - only code necessary
