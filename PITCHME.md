@@ -767,3 +767,11 @@ System-Provided:
 - Read about Blue - Green Deployment
 - https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html
 - Do it!
+
+---
+
+## Meetup
+
+![Meetup](https://secure.meetupstatic.com/photos/event/e/8/a/6/highres_458579558.jpeg)
+https://www.meetup.com/Stuttgart-Cloud-Foundry-Meetup/events/237897736/
+
