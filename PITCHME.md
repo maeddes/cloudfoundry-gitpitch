@@ -101,6 +101,11 @@ https://www.cloudfoundry.org/how-can-i-try-out-cloud-foundry-2016/
 <iframe data-src="https://www.cloudfoundry.org/certified-platforms/" height="480px" width="100%"></iframe>
 https://www.cloudfoundry.org/certified-platforms/
 
++++
+
+<iframe data-src="https://cdn.infoq.com/statics_s2_20170829-0315/resource/presentations/pcf-dev/en/slides/sl11.jpg" height="480px" width="100%"></iframe>
+(Source: infoq.com)
+
 ---
 
 # Administration
