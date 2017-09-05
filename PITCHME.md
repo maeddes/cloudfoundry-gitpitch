@@ -103,7 +103,7 @@ https://www.cloudfoundry.org/certified-platforms/
 
 +++
 
-<iframe data-src="https://cdn.infoq.com/statics_s2_20170829-0315/resource/presentations/pcf-dev/en/slides/sl11.jpg" height="480px" width="100%"></iframe>
+![CF Architecture](https://cdn.infoq.com/statics_s2_20170829-0315/resource/presentations/pcf-dev/en/slides/sl11.jpg)
 (Source: infoq.com)
 
 ---
