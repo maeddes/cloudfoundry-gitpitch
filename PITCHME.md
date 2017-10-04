@@ -768,6 +768,47 @@ mhs@R2-D2 ~> curl cf-numbers.cfapps.io
 404 Not Found: Requested route ('cf-numbers.cfapps.io') does not exist.
 ```
 
+The Gorouter will return 404 when a route exists, but does not point to an app.
+
++++
+
+### Mapping and unmapping routes
+
+```bash
+mhs@R2-D2 ~> cf unmap-route cf-numbers-service cfapps.io --hostname cf-numbers-service-corollaceous-cnida
+Removing route cf-numbers-service-corollaceous-cnida.cfapps.io from app cf-numbers-service in org NovaTec Development / space MHS_Development as mhs@novatec-gmbh.de...
+OK
+
+mhs@R2-D2 ~> cf map-route cf-numbers-service cfapps.io --hostname cf-numbers
+Creating route cf-numbers.cfapps.io for org NovaTec Development / space MHS_Development as mhs@novatec-gmbh.de...
+OK
+Route cf-numbers.cfapps.io already exists
+Adding route cf-numbers.cfapps.io to app cf-numbers-service in org NovaTec Development / space MHS_Development as mhs@novatec-gmbh.de...
+OK
+```
+
+### Duplicate mapping
+
+```bash
+mhs@R2-D2 ~/g/c/demo> cf map-route cf-test-abc-2 cfapps.io --hostname cf-test-abc
+Creating route cf-test-abc.cfapps.io for org NovaTec Development / space MHS_Development as mhs@novatec-gmbh.de...
+OK
+Route cf-test-abc.cfapps.io already exists
+Adding route cf-test-abc.cfapps.io to app cf-test-abc-2 in org NovaTec Development / space MHS_Development as mhs@novatec-gmbh.de...
+OK
+mhs@R2-D2 ~/g/c/demo> cf routes
+Getting routes for org NovaTec Development / space MHS_Development as mhs@novatec-gmbh.de ...
+
+space             host                                    domain      port   path   type   apps                        service
+MHS_Development   cf-test-abc                             cfapps.io                        cf-test-abc,cf-test-abc-2
+```
+
+In case of single hostname mappings to multiple apps the Gorouter will apply a round robin behaviour to balance between the routes.
+---
+
+###  Blue Green Deployment
+
+![BlueGreen](https://docs.cloudfoundry.org/devguide/images/blue-green/blue-green.png)
 
 ---
 
