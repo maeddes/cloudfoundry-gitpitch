@@ -787,6 +787,8 @@ Adding route cf-numbers.cfapps.io to app cf-numbers-service in org NovaTec Devel
 OK
 ```
 
++++
+
 ### Duplicate mapping
 
 ```bash
@@ -804,7 +806,8 @@ MHS_Development   cf-test-abc                             cfapps.io             
 ```
 
 In case of single hostname mappings to multiple apps the Gorouter will apply a round robin behaviour to balance between the routes.
----
+
++++
 
 ###  Blue Green Deployment
 
