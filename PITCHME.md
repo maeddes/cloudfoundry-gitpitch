@@ -719,6 +719,54 @@ System-Provided:
 - In order to reach an application in Cloud Foundry it requires a route to be defined
 - A standard route will be applied when an application is defined
 - A route consists of host+domain information, e.g. cf-simple-hello.local.pcfdev.io
+- By default the app name will be taken as host information, this can fail however is the URL is already in use
+- Random route mapping is supported here
+
++++
+
+### Listing apps and URLs
+
+```bash
+mhs@R2-D2 ~> cf apps
+Getting apps in org NovaTec Development / space MHS_Development as mhs@novatec-gmbh.de...
+OK
+
+name                 requested state   instances   memory   disk   urls
+cf-full-scs          stopped           0/1         512M     1G     cf-full-scs.cfapps.io
+cf-numbers-service   stopped           0/1         512M     1G     cf-numbers-service-corollaceous-cnida.cfapps.io
+cf-simple-hello      stopped           0/1         256M     1G     cf-simple-hello.cfapps.io
+cf-test-abc          started           1/1         1G       1G     cf-test-abc.cfapps.io
+cf-test-abc-2        started           1/1         1G       1G     cf-test-abc-2.cfapps.io
+```
++++
+
+### Listing routes
+
+```bash
+mhs@R2-D2 ~> cf routes
+Getting routes for org NovaTec Development / space MHS_Development as mhs@novatec-gmbh.de ...
+
+space             host                                    domain      port   path   type   apps                 service
+MHS_Development   cf-simple-hello                         cfapps.io                        cf-simple-hello
+MHS_Development   cf-numbers-service-corollaceous-cnida   cfapps.io                        cf-numbers-service
+MHS_Development   cf-numbers                              cfapps.io
+MHS_Development   cf-full-scs                             cfapps.io                        cf-full-scs
+MHS_Development   cf-test-abc                             cfapps.io                        cf-test-abc
+MHS_Development   cf-test-abc-2                           cfapps.io                        cf-test-abc-2
+```
+
++++
+
+### Routes with no apps
+
+```bash
+mhs@R2-D2 ~> cf check-route cf-numbers cfapps.io
+Checking for route...
+OK
+Route cf-numbers.cfapps.io does exist
+mhs@R2-D2 ~> curl cf-numbers.cfapps.io
+404 Not Found: Requested route ('cf-numbers.cfapps.io') does not exist.
+```
 
 
 ---
