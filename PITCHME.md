@@ -14,7 +14,7 @@ PaaS for the good ones :-)
 * Apps - Deployment
 * Apps - Runtime
 * Services 
-* //TODO: Routes
+* Routes
  
 ---
 
@@ -709,6 +709,17 @@ System-Provided:
 }
 
 ```
+
+---
+
+# Routes & Blue/Green Deployment
+
++++
+
+- In order to reach an application in Cloud Foundry it requires a route to be defined
+- A standard route will be applied when an application is defined
+- A route consists of host+domain information, e.g. cf-simple-hello.local.pcfdev.io
+
 
 ---
 
