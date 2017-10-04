@@ -883,6 +883,6 @@ In case of single hostname mappings to multiple apps the Gorouter will apply a r
 
 --- 
 
-<iframe data-src="https://www.meetup.com/Stuttgart-Cloud-Foundry-Meetup/" height="480px" width="100%"></iframe>
-[Buildpacks](https://www.meetup.com/Stuttgart-Cloud-Foundry-Meetup/)
+<iframe data-src="https://www.meetup.com/Stuttgart-Cloud-Foundry-Meetup" height="480px" width="100%"></iframe>
+[Meetup](https://www.meetup.com/Stuttgart-Cloud-Foundry-Meetup/)
 
