@@ -199,7 +199,7 @@ Targeted space development
 
 +++
 
-##Login
+## Login
 
 - Upon successful login, the cf CLI saves a config.json file containing your API endpoint, org, space values, and access token. If you change these settings, the config.json file is updated accordingly.
 
@@ -207,16 +207,17 @@ Targeted space development
 
 ---
 
-#Applications
-##Buildpacks & Droplets
+# Applications
 
-+++
++++ 
 
 ![cf push](https://1.bp.blogspot.com/-4aQw8F8suu4/VrkvObvIjkI/AAAAAAAAG08/X3At9XP5A9k/s1600/Selection_019.png)
 
 (source: http://nanduni.blogspot.de)
 
 +++
+
+### Buildpacks & Droplets
 
 ![sketch1](img/20170421_202906.jpg)
 
@@ -301,7 +302,7 @@ Successfully destroyed container
 
 +++
 
-###Starting
+### Starting
 ```bash
 0 of 1 instances running, 1 starting
 0 of 1 instances running, 1 starting
@@ -391,8 +392,8 @@ https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html
 
 ---
 
-#Applications
-##Environment, Scaling & ssh
+# Applications
+## Environment, Scaling & ssh
 
 +++
 
