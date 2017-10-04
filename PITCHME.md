@@ -361,7 +361,7 @@ https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html
 
 +++
 
-#Buildpacks
+# Buildpacks
 
 +++
 
@@ -373,11 +373,6 @@ https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html
 
 <iframe data-src="https://docs.cloudfoundry.org/buildpacks/#system-buildpacks" height="480px" width="100%"></iframe>
 [Buildpacks](https://docs.cloudfoundry.org/buildpacks/#system-buildpacks)
-
-+++
-
-<iframe data-src="https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks#community-created" height="480px" width="100%"></iframe>
-[Community-BPs](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks#community-created)
 
 +++
 
