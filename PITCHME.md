@@ -809,16 +809,11 @@ In case of single hostname mappings to multiple apps the Gorouter will apply a r
 
 ![BlueGreen](https://docs.cloudfoundry.org/devguide/images/blue-green/blue-green.png)
 
+(Source: https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html)
+
 ---
 
 # Demo
-
----
-
-# Note
-
-### pcf dev users use cf suspend/resume for your VM
-
 
 ---
 
@@ -882,10 +877,12 @@ In case of single hostname mappings to multiple apps the Gorouter will apply a r
 
 ---
 
-![Meetup](https://secure.meetupstatic.com/photos/event/e/8/a/6/highres_458579558.jpeg)
-https://www.meetup.com/Stuttgart-Cloud-Foundry-Meetup/events/237897736/
+# Note
 
----
+### pcf dev users use cf suspend/resume for your VM
 
-https://gitpitch.com/maeddes/cloudfoundry-gitpitch
+--- 
+
+<iframe data-src="https://www.meetup.com/Stuttgart-Cloud-Foundry-Meetup/" height="480px" width="100%"></iframe>
+[Buildpacks](https://www.meetup.com/Stuttgart-Cloud-Foundry-Meetup/)
 
