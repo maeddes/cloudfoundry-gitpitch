@@ -265,7 +265,7 @@ OK
 
 +++
 
-### Staging - Downloading app & buildpack
+### Staging - app & buildpack
 ```bash
 Starting app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
 Downloading java_buildpack...
@@ -285,7 +285,7 @@ Staging...
 
 +++
 
-### Staging - Droplet & Container start
+### Staging - droplet & container start
 ```bash
 Exit status 0
 Staging complete
