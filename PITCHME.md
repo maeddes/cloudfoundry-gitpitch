@@ -241,10 +241,6 @@ OPTIONS:
    --no-start                   Do not start an app after pushing
    -p                           Path to app directory or to a zip file of the contents of the app directory
    -t                           Time (in seconds) allowed to elapse between starting up an app and the first healthy response from the app
-
-ENVIRONMENT:
-   CF_STAGING_TIMEOUT=15        Max wait time for buildpack staging, in minutes
-   CF_STARTUP_TIMEOUT=5         Max wait time for app instance startup, in minutes
 ```
 +++
 
@@ -269,7 +265,7 @@ OK
 
 +++
 
-### Staging
+### Staging - Downloading app & buildpack
 ```bash
 Starting app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
 Downloading java_buildpack...
@@ -285,6 +281,10 @@ Staging...
 -----> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from https://java-buildpack.cloudfoundry.org/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz (found in cache)
        Memory Settings: -Xmx681574K -XX:MaxMetaspaceSize=104857K -Xms681574K -XX:MetaspaceSize=104857K -Xss349K
 -----> Downloading Spring Auto Reconfiguration 1.10.0_RELEASE from https://java-buildpack.cloudfoundry.org/auto-reconfiguration/auto-reconfiguration-1.10.0_RELEASE.jar (found in cache)
+```
+
+### Staging - Droplet & Container start
+```bash
 Exit status 0
 Staging complete
 Uploading droplet, build artifacts cache...
@@ -295,23 +295,19 @@ Uploaded droplet (57.3M)
 Uploading complete
 Destroying container
 Successfully destroyed container
+
+0 of 1 instances running, 1 starting
+1 of 1 instances running
+
+App started
+
+OK
 ```
 
 +++
 
 ### Starting
 ```bash
-0 of 1 instances running, 1 starting
-0 of 1 instances running, 1 starting
-0 of 1 instances running, 1 starting
-0 of 1 instances running, 1 starting
-1 of 1 instances running
-
-App started
-
-
-OK
-
 App cf-simple-hello was started using this command `CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpack-memory-calculator-2.0.2_RELEASE -memorySizes=metaspace:64m..,stack:228k.. -memoryWeights=heap:65,metaspace:10,native:15,stack:10 -memoryInitials=heap:100%,metaspace:100% -stackThreads=300 -totMemory=$MEMORY_LIMIT) && JAVA_OPTS="-Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh $CALCULATED_MEMORY" && SERVER_PORT=$PORT eval exec $PWD/.java-buildpack/open_jdk_jre/bin/java $JAVA_OPTS -cp $PWD/. org.springframework.boot.loader.JarLauncher`
 
 Showing health and status for app cf-simple-hello in org pcfdev-org / space pcfdev-space as admin...
