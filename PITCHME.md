@@ -283,6 +283,8 @@ Staging...
 -----> Downloading Spring Auto Reconfiguration 1.10.0_RELEASE from https://java-buildpack.cloudfoundry.org/auto-reconfiguration/auto-reconfiguration-1.10.0_RELEASE.jar (found in cache)
 ```
 
++++
+
 ### Staging - Droplet & Container start
 ```bash
 Exit status 0
