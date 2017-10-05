@@ -192,9 +192,6 @@ Select a space (or press enter to skip):
 1. development
 2. staging
 3. production
-
-Space> 1
-Targeted space development
 ```
 
 +++
