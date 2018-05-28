@@ -103,8 +103,12 @@ https://www.cloudfoundry.org/certified-platforms/
 
 +++
 
-![CF Architecture](https://cdn.infoq.com/statics_s2_20170829-0315/resource/presentations/pcf-dev/en/slides/sl11.jpg)
-(Source: infoq.com)
+## Come to the meetup
+
+<iframe data-src="https://www.meetup.com/Stuttgart-Cloud-Foundry-Meetup/" height="480px" width="100%"></iframe>
+https://www.meetup.com/Stuttgart-Cloud-Foundry-Meetup/
+
+
 
 ---
 
